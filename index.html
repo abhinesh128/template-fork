@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Menu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <!-- Desktop Menu -->
+            <div class="desktop-menu">
+                <div class="logo">/ENIA</div>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Smart Gear</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+                <div class="cart-icon">
+                    <img src="Images/cart.png" alt="Cart Icon">
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
+                <div class="logo">VENIA</div>
+
+                <div class="cart-icon">
+                    <img src="Images/cart.png" alt="Cart Icon">
+                </div>
+                <ul class="mobile-nav" id="mobile-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Women</a></li>
+                    <li><a href="#">Men</a></li>
+                    <li><a href="#">Smart Gear</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+
+    <section class="banner">
+        <div class="box1 banner-text">
+            <h1>Men’s <br> Outerwear</h1>
+            <div class="underline"></div>
+        </div>
+        <div class="box2 banner-image">
+            <img src="/Images/banner_img.png" alt="Banner Image">
+        </div>
+    </section>
+    <div class="container">
+        <!-- Sidebar Filters -->
+        <aside class="filters">
+            <div class="breadcrumb">
+                <a href="#">Clothing</a>
+                <span>/</span>
+                <a href="#">Women's</a>
+                <span>/</span>
+                <a href="#">Outerwrea</a>
+            </div>
+            <div class="mobile-filter-main" id="mobile-filter-main">
+                <div class="mobile-filter-control">
+                    <div class="filter-h2">Filters</div>
+                    <div class="close-popup" onclick="showHideFilter(false)">X</div>
+                    <div class="all-filter-value">
+                        <div class="categories">Categories</div>
+                        <ul class="next-border">
+                            <li><input type="checkbox" id="jewellery" /><label for="jewellery">Jewellery</label></li>
+                            <li><input type="checkbox" id="electronics" /><label for="electronics">Electronics</label>
+                            </li>
+                            <li><input type="checkbox" id="mens-clothing" /><label for="mens-clothing">Men's
+                                    Clothing</label></li>
+                            <li><input type="checkbox" id="womens-clothing" /><label for="womens-clothing">Women's
+                                    Clothing</label>
+                            </li>
+                        </ul>
+
+                        <div class="categories">Price Range</div>
+                        <div class="next-border">
+                            <div class="price-range">
+                                <input type="range" id="price-range" min="0" max="1000" value="1000" step="10" />
+                                <div>
+                                    <span>$0</span>
+                                    <span id="price-range-label"> $1000 </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="see-result-main">
+                        <button class="see-result" id="see-result" onclick="showHideFilter(false)"> </button>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </aside>
+        <div class="mobile-controls">
+            <div id="filter-btn" class="mobile-btn" onclick="showHideFilter(true)">
+                <img src="/Images/icon1.png" alt="Filter Icon" />
+                Filter Results
+            </div>
+            <div id="sort-btn" class="mobile-btn">
+                <img src="/Images/icon2.png" alt="Sort Icon" />
+                Sort Products
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="products">
+            <div class="sort ">
+                <label id="total-data"></label>
+                <span class="sort-dropdown">
+
+
+                    <select id="sort-option">
+                        <option value="">Price: Default</option>
+                        <option value="price-low-to-high">Price: Low to High</option>
+                        <option value="price-high-to-low">Price: High to Low</option>
+                    </select>
+                </span>
+            </div>
+
+            <div class="product-list" id="product-list">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- Pagination buttons will be dynamically added here -->
+            </div>
+        </main>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
